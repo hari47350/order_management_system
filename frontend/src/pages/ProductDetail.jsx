@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import api from '../api/axios';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
@@ -16,6 +16,7 @@ const ProductDetail = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const { addToCart } = useCart();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     fetchProduct();
@@ -35,7 +36,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {
-      navigate('/login');
+      navigate('/login', { state: { from: location } });
       return;
     }
     try {
