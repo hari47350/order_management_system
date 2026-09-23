@@ -1,0 +1,51 @@
+﻿# Java / Maven build output
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Node / Frontend build output & dependencies
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*-local.yml
+*-local.properties
+application-local.yml
+
+# IDEs and Editors
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Local scripts
+powershell.cmd

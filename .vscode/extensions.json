@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "vscjava.vscode-java-pack",
+    "gabrielbb.vscode-lombok",
+    "vmware.vscode-spring-boot",
+    "vscjava.vscode-spring-initializr",
+    "dbaeumer.vscode-eslint"
+  ]
+}

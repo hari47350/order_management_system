@@ -1,0 +1,46 @@
+﻿server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: order-management-system
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/oms_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+      jdbc:
+        time_zone: UTC
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000} # 24 hours
+  payment:
+    stripe:
+      secret-key: ${STRIPE_SECRET_KEY:}
+      publishable-key: ${STRIPE_PUBLISHABLE_KEY:}
+      currency: ${STRIPE_CURRENCY:inr}
+  seed:
+    enabled: ${SEED_DATA_ENABLED:true} # Set to false in production to prevent seeding demo data
+    initial-admin:
+      email: ${INITIAL_ADMIN_EMAIL:admin@oms.com}
+      password: ${INITIAL_ADMIN_PASSWORD:Admin@123}
+      full-name: ${INITIAL_ADMIN_NAME:Administrator}
+      phone: ${INITIAL_ADMIN_PHONE:+919876543210}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
