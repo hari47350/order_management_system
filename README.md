@@ -274,6 +274,39 @@ Services will be available at:
 
 ---
 
+### 4. Cloud Deployment (Render + Vercel)
+
+#### Step 1: Deploy Backend & Database on Render
+1. **MySQL Database**:
+   - Create a free cloud MySQL database (e.g. on [Aiven for MySQL](https://aiven.io), [TiDB Cloud](https://tidbcloud.com), or [Clever Cloud](https://www.clever-cloud.com)).
+   - Copy the database JDBC URL, username, and password.
+2. **Spring Boot Backend**:
+   - Go to [Render Dashboard](https://dashboard.render.com/) &rarr; **New +** &rarr; **Web Service**.
+   - Connect your GitHub repo: `hari47350/order_management_system`.
+   - Render automatically detects `render.yaml` (or choose **Docker** runtime with Dockerfile path `./backend/Dockerfile`).
+   - Configure Environment Variables:
+     - `SPRING_DATASOURCE_URL`: your cloud MySQL JDBC URL
+     - `SPRING_DATASOURCE_USERNAME`: your cloud MySQL username
+     - `SPRING_DATASOURCE_PASSWORD`: your cloud MySQL password
+     - `JWT_SECRET`: a secure 256-bit random hex string
+     - `INITIAL_ADMIN_EMAIL`: your production admin email
+     - `INITIAL_ADMIN_PASSWORD`: your production admin password
+     - `STRIPE_CURRENCY`: `inr`
+   - Click **Create Web Service**. Once deployed, copy your backend URL (e.g., `https://order-management-backend.onrender.com`).
+
+#### Step 2: Deploy Frontend on Vercel
+1. Go to [Vercel Dashboard](https://vercel.com/) &rarr; **Add New...** &rarr; **Project**.
+2. Select and import `hari47350/order_management_system`.
+3. In project settings:
+   - **Framework Preset**: `Vite`
+   - **Root Directory**: Click *Edit* &rarr; select `frontend`.
+4. Under **Environment Variables**:
+   - Key: `VITE_API_URL`
+   - Value: `https://your-backend-service.onrender.com` *(Render backend URL from Step 1)*
+5. Click **Deploy**. Vercel will build and serve your global CDN storefront with full client-side SPA routing (`vercel.json`).
+
+---
+
 ## 🧪 Automated Testing & Verification
 
 Run the full automated test suite:
