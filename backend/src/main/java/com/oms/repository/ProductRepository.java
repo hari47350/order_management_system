@@ -17,11 +17,11 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("SELECT p FROM Product p WHERE " +
            "(:activeOnly IS NULL OR p.active = :activeOnly) AND " +
            "(:categoryId IS NULL OR p.category.id = :categoryId) AND " +
-           "(:search IS NULL OR LOWER(p.name) LIKE LOWER(CONCAT('%', :search, '%')) OR LOWER(p.description) LIKE LOWER(CONCAT('%', :search, '%'))) AND " +
+           "(:searchPattern IS NULL OR LOWER(p.name) LIKE :searchPattern OR LOWER(p.description) LIKE :searchPattern) AND " +
            "(:minPrice IS NULL OR p.price >= :minPrice) AND " +
            "(:maxPrice IS NULL OR p.price <= :maxPrice)")
     Page<Product> searchProducts(
-            @Param("search") String search,
+            @Param("searchPattern") String searchPattern,
             @Param("categoryId") Long categoryId,
             @Param("minPrice") BigDecimal minPrice,
             @Param("maxPrice") BigDecimal maxPrice,

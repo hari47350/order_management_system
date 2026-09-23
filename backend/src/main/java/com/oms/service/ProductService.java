@@ -30,8 +30,10 @@ public class ProductService {
             Boolean activeOnly,
             Pageable pageable) {
 
-        String cleanedSearch = (search != null && !search.isBlank()) ? search.trim() : null;
-        Page<Product> products = productRepository.searchProducts(cleanedSearch, categoryId, minPrice, maxPrice, activeOnly, pageable);
+        String searchPattern = (search != null && !search.isBlank())
+                ? "%" + search.trim().toLowerCase() + "%"
+                : null;
+        Page<Product> products = productRepository.searchProducts(searchPattern, categoryId, minPrice, maxPrice, activeOnly, pageable);
         return products.map(this::toProductResponse);
     }
 
