@@ -1,4 +1,4 @@
-﻿services:
+services:
   - type: web
     name: order-management-backend
     runtime: docker
@@ -8,19 +8,15 @@
     envVars:
       - key: PORT
         value: 8080
-      - key: SPRING_DATASOURCE_URL
-        sync: false
-      - key: SPRING_DATASOURCE_USERNAME
-        sync: false
-      - key: SPRING_DATASOURCE_PASSWORD
-        sync: false
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
       - key: JWT_SECRET
         generateValue: true
       - key: SEED_DATA_ENABLED
         value: "true"
       - key: INITIAL_ADMIN_EMAIL
-        sync: false
+        value: harireddyhari123@gmail.com
       - key: INITIAL_ADMIN_PASSWORD
-        sync: false
+        value: Admin@123
       - key: STRIPE_CURRENCY
         value: inr
