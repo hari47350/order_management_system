@@ -1,9 +1,9 @@
-services:
+﻿services:
   - type: web
     name: order-management-backend
     runtime: docker
-    dockerfilePath: ./backend/Dockerfile
-    dockerContext: ./backend
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
     plan: free
     envVars:
       - key: PORT
