@@ -1,13 +1,19 @@
 # 🛒 CartToDoor — From Cart to Your Doorstep
 ### Production-Grade Enterprise Order Management System (OMS) & E-Commerce Marketplace
 
+[![Live Demo](https://img.shields.io/badge/Storefront-Vercel%20Live-black.svg?style=flat-square&logo=vercel)](https://order-management-system-wh6y.vercel.app)
+[![Live Backend](https://img.shields.io/badge/Backend-Render%20Live-46E3B7.svg?style=flat-square&logo=render)](https://order-management-system-1-wrsk.onrender.com)
+[![Swagger Docs](https://img.shields.io/badge/API_Docs-Swagger%20UI-85EA2D.svg?style=flat-square&logo=swagger)](https://order-management-system-1-wrsk.onrender.com/swagger-ui/index.html)
 [![Java](https://img.shields.io/badge/Java-21-orange.svg?style=flat-square&logo=openjdk)](https://openjdk.org/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.4-brightgreen.svg?style=flat-square&logo=springboot)](https://spring.io/projects/spring-boot)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg?style=flat-square&logo=mysql)](https://www.mysql.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1.svg?style=flat-square&logo=postgresql)](https://neon.tech/)
 [![React](https://img.shields.io/badge/React-18.3-61dafb.svg?style=flat-square&logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8.svg?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ed.svg?style=flat-square&logo=docker)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-MIT-purple.svg?style=flat-square)](LICENSE)
+
+> 🌐 **Live Storefront (Vercel)**: **[https://order-management-system-wh6y.vercel.app](https://order-management-system-wh6y.vercel.app)**  
+> ⚙️ **Live Backend API (Render)**: **[https://order-management-system-1-wrsk.onrender.com](https://order-management-system-1-wrsk.onrender.com)**  
+> 📖 **API Docs (Swagger UI)**: **[https://order-management-system-1-wrsk.onrender.com/swagger-ui/index.html](https://order-management-system-1-wrsk.onrender.com/swagger-ui/index.html)**
 
 **CartToDoor** is a full-stack, production-ready Order Management System (OMS) built with high concurrency, strict transactional guarantees, and zero hardcoded frontend business data. Inspired by modern hyper-scale e-commerce platforms like Amazon and Flipkart, CartToDoor handles end-to-end customer purchasing flows, real-time inventory tracking, and warehouse logistics fulfillment.
 
